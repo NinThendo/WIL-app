@@ -29,6 +29,7 @@ export const ItemSelectionScreen: React.FC<ItemSelectionScreenProps> = ({
   const [selectedItems, setSelectedItems] = useState<Item[]>([]);
   const [subtotal, setSubtotal] = useState(0);
   const [discount, setDiscount] = useState(0);
+  const [vat, setVat] = useState(0);
   const [total, setTotal] = useState(0);
 
   const items: Item[] = [
@@ -78,27 +79,21 @@ export const ItemSelectionScreen: React.FC<ItemSelectionScreenProps> = ({
       imageUrl: "https://cdn-icons-png.flaticon.com/512/11777/11777487.png",
     },
   ];
-  // Runs whenever the selectedItems array changes
+
   useEffect(() => {
     calculateTotal();
   }, [selectedItems]);
 
-  // Toggles the selection status of an item
   const toggleItem = (item: Item) => {
-    // Checks if the item is already selected
     const index = selectedItems.findIndex((i) => i.id === item.id);
     if (index > -1) {
-      // If the item is already selected, remove it from selectedItems
       setSelectedItems(selectedItems.filter((i) => i.id !== item.id));
     } else {
-      // If the item is not selected, add it to selectedItems
       setSelectedItems([...selectedItems, item]);
     }
   };
 
-  // Calculates the subtotal, discount, and total based on selected items
   const calculateTotal = () => {
-    // Calculates subtotal by summing the prices of all selected items
     const newSubtotal = selectedItems.reduce(
       (sum, item) => sum + item.price,
       0
@@ -106,21 +101,26 @@ export const ItemSelectionScreen: React.FC<ItemSelectionScreenProps> = ({
 
     let discountRate = 0;
 
-    // Sets discount rate based on the number of selected items
     if (selectedItems.length === 2) {
-      discountRate = 0.05; // 5% discount for 2 items
+      discountRate = 0.05;
     } else if (selectedItems.length === 3) {
-      discountRate = 0.1; // 10% discount for 3 items
+      discountRate = 0.1;
     } else if (selectedItems.length >= 4) {
-      discountRate = 0.15; // 15% discount for 4 or more items
+      discountRate = 0.15;
     }
 
-    // Calculates discount amount and final total
     const newDiscount = newSubtotal * discountRate;
-    const newTotal = newSubtotal - newDiscount;
+    const subtotalAfterDiscount = newSubtotal - newDiscount;
+
+    // Calculate 15% VAT on the amount after discount
+    const newVat = subtotalAfterDiscount * 0.15;
+
+    // Calculate final total including VAT
+    const newTotal = subtotalAfterDiscount + newVat;
 
     setSubtotal(newSubtotal);
     setDiscount(newDiscount);
+    setVat(newVat);
     setTotal(newTotal);
   };
 
@@ -164,6 +164,10 @@ export const ItemSelectionScreen: React.FC<ItemSelectionScreenProps> = ({
         <View style={styles.row}>
           <Text style={styles.summaryText}>Discount</Text>
           <Text style={styles.summaryText}>-R{discount.toFixed(2)}</Text>
+        </View>
+        <View style={styles.row}>
+          <Text style={styles.summaryText}>VAT (15%)</Text>
+          <Text style={styles.summaryText}>R{vat.toFixed(2)}</Text>
         </View>
         <View style={styles.row}>
           <Text style={styles.summaryText}>Total</Text>

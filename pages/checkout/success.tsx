@@ -22,7 +22,7 @@ export const PaymentSuccessScreen: React.FC<PaymentSuccessScreenProps> = ({
   return (
     <View style={styles.container}>
       <Text style={styles.successText}>Payment Successful!</Text>
-      <Text style={styles.totalText}>Total Paid: ${total.toFixed(2)}</Text>
+      <Text style={styles.totalText}>Total Paid: R{total.toFixed(2)}</Text>
       <TouchableOpacity
         style={styles.homeButton}
         onPress={handleHomeNavigation}
