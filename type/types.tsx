@@ -15,7 +15,6 @@ export type DrawerParamList = {
 export type RootStackParamList = {
   Drawer: DrawerParamList;
   HomePage: undefined;
-  SignUpScreen: undefined;
   checkout: undefined;
   ItemSelection: undefined;
   PaymentDetails: { total: number };
