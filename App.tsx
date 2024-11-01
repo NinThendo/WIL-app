@@ -4,8 +4,6 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { createStackNavigator } from "@react-navigation/stack";
 import { DrawerParamList, RootStackParamList } from "./type/types";
-
-// Import your screens
 import { HomePage } from "./pages/general pages/welc";
 import { ItemSelectionScreen } from "./pages/checkout/pay";
 import { PaymentDetailsScreen } from "./pages/checkout/checkout";
@@ -18,6 +16,9 @@ import { AboutScreen } from "./pages/general pages/about";
 
 const Drawer = createDrawerNavigator<DrawerParamList>();
 const Stack = createStackNavigator<RootStackParamList>();
+
+// This code is based on the Drawer-based Navigation example from React Navigation documentation
+// Source: https://reactnavigation.org/docs/drawer-based-navigation/
 
 function DrawerNavigator() {
   return (

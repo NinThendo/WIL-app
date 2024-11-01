@@ -38,45 +38,49 @@ export const ItemSelectionScreen: React.FC<ItemSelectionScreenProps> = ({
       name: "Child Minding",
       price: 750,
       imageUrl:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpVV1WvNs2atEqANI_pM1getLIDHlQMIm4lQ&s",
+        "https://cdn.pixabay.com/photo/2016/05/31/11/26/baby-1426651_1280.jpg",
     },
     {
       id: 2,
       name: "Cooking",
       price: 750,
-      imageUrl: "https://cdn-icons-png.freepik.com/512/6951/6951856.png",
+      imageUrl:
+        "https://cdn.pixabay.com/photo/2016/03/27/21/34/restaurant-1284351_640.jpg",
     },
     {
       id: 3,
       name: "Garden maintenance",
       price: 750,
       imageUrl:
-        "https://cdn.iconscout.com/icon/premium/png-256-thumb/garden-maintenance-5889593-4943447.png",
+        "https://cdn.pixabay.com/photo/2023/06/22/07/13/soil-8080788_640.jpg",
     },
     {
       id: 4,
       name: "First Aid",
       price: 1500,
       imageUrl:
-        "https://media.istockphoto.com/id/1158611058/vector/flat-vector-medical-cross-icon.jpg?s=612x612&w=0&k=20&c=8vwNOCPpNInL5SwobVFD1eoIWaUd6wX2JNS7LJAPyFY=",
+        "https://cdn.pixabay.com/photo/2018/01/14/21/36/first-aid-3082670_640.jpg",
     },
     {
       id: 5,
       name: "Sewing",
       price: 1500,
-      imageUrl: "https://cdn-icons-png.flaticon.com/512/115/115862.png",
+      imageUrl:
+        "https://cdn.pixabay.com/photo/2014/02/09/01/08/sewing-machine-262454_640.jpg",
     },
     {
       id: 6,
       name: "Landscaping",
       price: 1500,
-      imageUrl: "https://static.thenounproject.com/png/2057494-200.png",
+      imageUrl:
+        "https://images.pexels.com/photos/158028/bellingrath-gardens-alabama-landscape-scenic-158028.jpeg?auto=compress&cs=tinysrgb&w=600",
     },
     {
       id: 7,
       name: "Life skills",
       price: 1500,
-      imageUrl: "https://cdn-icons-png.flaticon.com/512/11777/11777487.png",
+      imageUrl:
+        "https://cdn.pixabay.com/photo/2016/03/27/19/57/hands-1284033_1280.jpg",
     },
   ];
 
