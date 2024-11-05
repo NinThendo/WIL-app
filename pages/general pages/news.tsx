@@ -1,14 +1,5 @@
 import React, { useState } from "react";
-import {
-  View,
-  Text,
-  StyleSheet,
-  ScrollView,
-  TouchableOpacity,
-  RefreshControl,
-  Image,
-  Dimensions,
-} from "react-native";
+import { View, Text, ScrollView, TouchableOpacity, Image } from "react-native";
 import { DrawerScreenProps } from "../../type/types";
 import { styles } from "../../styles/newsStyle";
 
@@ -25,7 +16,6 @@ type NewsItem = {
 };
 
 export function NewsScreen({ navigation }: Props) {
-  const [refreshing, setRefreshing] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
 
   const news: NewsItem[] = [
@@ -87,7 +77,6 @@ export function NewsScreen({ navigation }: Props) {
       : news.filter((item) => item.category === selectedCategory);
 
   const navigateToDetail = (item: NewsItem) => {
-    // Navigate to detail screen with news item data
     navigation.navigate("NewsDetail", { newsItem: item });
   };
 

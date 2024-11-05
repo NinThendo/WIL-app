@@ -1,3 +1,4 @@
+// Import required dependencies
 import "react-native-gesture-handler";
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
@@ -14,6 +15,18 @@ import { NewsScreen } from "./pages/general pages/news";
 import { ContactScreen } from "./pages/general pages/contact";
 import { AboutScreen } from "./pages/general pages/about";
 
+// Color palette definition
+const colors = {
+  primary: "#63a375", // Sage green for drawer
+  secondary: "#4a90e2", // Sky blue for accents and CTAs
+  background: "#f8f9fa", // Light gray background
+  text: "#2d3436", // Dark gray text
+  success: "#27ae60", // Green for success states
+  warning: "#f39c12", // Orange for warnings
+  error: "#e74c3c", // Red for errors
+  white: "#ffffff", // Pure white
+};
+
 const Drawer = createDrawerNavigator<DrawerParamList>();
 const Stack = createStackNavigator<RootStackParamList>();
 
@@ -26,12 +39,20 @@ function DrawerNavigator() {
       initialRouteName="Home"
       screenOptions={{
         headerStyle: {
-          backgroundColor: "#f9f9f9",
+          backgroundColor: colors.background,
         },
-        headerTintColor: "#333",
+        headerTintColor: colors.text,
         headerTitleStyle: {
           fontWeight: "bold",
         },
+        drawerStyle: {
+          backgroundColor: colors.primary,
+        },
+        drawerLabelStyle: {
+          color: colors.white,
+        },
+        drawerActiveTintColor: colors.white,
+        drawerInactiveTintColor: "rgba(255, 255, 255, 0.7)",
       }}
     >
       <Drawer.Screen name="Home" component={HomePage} />
@@ -59,9 +80,9 @@ export default function App() {
           options={{
             title: "Select Items",
             headerStyle: {
-              backgroundColor: "#f9f9f9",
+              backgroundColor: colors.background,
             },
-            headerTintColor: "#333",
+            headerTintColor: colors.text,
             headerTitleStyle: {
               fontWeight: "bold",
             },
@@ -72,6 +93,13 @@ export default function App() {
           component={PaymentDetailsScreen}
           options={{
             title: "Payment Details",
+            headerStyle: {
+              backgroundColor: colors.background,
+            },
+            headerTintColor: colors.text,
+            headerTitleStyle: {
+              fontWeight: "bold",
+            },
           }}
         />
         <Stack.Screen
@@ -79,6 +107,13 @@ export default function App() {
           component={PaymentSuccessScreen}
           options={{
             title: "Payment Successful",
+            headerStyle: {
+              backgroundColor: colors.background,
+            },
+            headerTintColor: colors.success,
+            headerTitleStyle: {
+              fontWeight: "bold",
+            },
           }}
         />
       </Stack.Navigator>
