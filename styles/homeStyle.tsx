@@ -1,26 +1,10 @@
 import { StyleSheet } from "react-native";
 
-// Color palette
-const colors = {
-  primary: "#63a375", // Sage green (drawer color)
-  secondary: "#4a90e2", // Sky blue
-  background: "#f8f9fa", // Light gray
-  white: "#ffffff",
-  text: {
-    primary: "#2d3436", // Dark gray
-    secondary: "#666666", // Medium gray
-  },
-  success: "#27ae60", // Green
-  border: "#f0f0f0", // Light border color
-  shadow: "#000000", // For shadows
-};
-
 export const styles = StyleSheet.create({
-  // Container and Header Styles
   container: {
     flex: 1,
     padding: 16,
-    backgroundColor: colors.background,
+    backgroundColor: "#f9f9f9",
   },
   headerImage: {
     width: 30,
@@ -31,22 +15,24 @@ export const styles = StyleSheet.create({
   // Hero Section Styles
   heroSection: {
     padding: 20,
-    backgroundColor: colors.white,
+    backgroundColor: "#ffffff",
     borderRadius: 15,
     marginBottom: 24,
     alignItems: "center",
     elevation: 5,
-    shadowColor: colors.shadow,
+    shadowColor: "#000",
     shadowOffset: { width: 0, height: 3 },
     shadowOpacity: 0.1,
     shadowRadius: 6,
+    borderColor: "#e0f2e9", // Light green accent
+    borderWidth: 1,
   },
 
   // Typography Styles
   heading: {
     fontSize: 28,
     fontWeight: "bold",
-    color: colors.text.primary,
+    color: "#333",
     marginTop: 24,
     marginBottom: 24,
     textAlign: "center",
@@ -54,25 +40,25 @@ export const styles = StyleSheet.create({
   subheading: {
     fontSize: 22,
     fontWeight: "600",
-    color: colors.text.primary,
+    color: "#444",
     marginBottom: 16,
   },
 
   // Main Action Button Styles
   mainActionButton: {
-    backgroundColor: colors.primary,
+    backgroundColor: "#4CAF50",
     paddingVertical: 12,
     paddingHorizontal: 30,
     borderRadius: 8,
     marginTop: 15,
     elevation: 5,
-    shadowColor: colors.shadow,
+    shadowColor: "#000",
     shadowOffset: { width: 0, height: 3 },
     shadowOpacity: 0.1,
     shadowRadius: 6,
   },
   mainActionButtonText: {
-    color: colors.white,
+    color: "#FFFFFF",
     fontSize: 16,
     fontWeight: "bold",
     textAlign: "center",
@@ -85,15 +71,17 @@ export const styles = StyleSheet.create({
   },
   summaryContainer: {
     width: "100%",
-    backgroundColor: colors.white,
+    backgroundColor: "#ffffff",
     borderRadius: 15,
     padding: 20,
     marginBottom: 16,
     elevation: 5,
-    shadowColor: colors.shadow,
+    shadowColor: "#000",
     shadowOffset: { width: 0, height: 3 },
     shadowOpacity: 0.1,
     shadowRadius: 6,
+    borderColor: "#e0f2e9", // Light green accent
+    borderWidth: 1,
   },
   summaryHeader: {
     flexDirection: "row",
@@ -104,31 +92,31 @@ export const styles = StyleSheet.create({
   summaryTitle: {
     fontSize: 20,
     fontWeight: "bold",
-    color: colors.text.primary,
+    color: "#333",
     marginBottom: 8,
   },
   summaryText: {
     fontSize: 16,
-    color: colors.text.secondary,
+    color: "#666",
     lineHeight: 22,
     marginBottom: 16,
   },
   summaryDate: {
     fontSize: 12,
-    color: colors.text.secondary,
+    color: "#666",
     fontStyle: "italic",
   },
 
   // Navigation Button Styles
   navigationButton: {
-    backgroundColor: colors.primary,
+    backgroundColor: "#4CAF50",
     paddingVertical: 12,
     paddingHorizontal: 20,
     borderRadius: 8,
     alignSelf: "flex-start",
   },
   navigationButtonText: {
-    color: colors.white,
+    color: "#FFFFFF",
     fontSize: 16,
     fontWeight: "bold",
   },
@@ -136,14 +124,16 @@ export const styles = StyleSheet.create({
   // Courses Section Styles
   coursesSection: {
     marginVertical: 24,
-    backgroundColor: colors.white,
+    backgroundColor: "#ffffff",
     borderRadius: 15,
     padding: 16,
     elevation: 5,
-    shadowColor: colors.shadow,
+    shadowColor: "#000",
     shadowOffset: { width: 0, height: 3 },
     shadowOpacity: 0.1,
     shadowRadius: 6,
+    borderColor: "#e0f2e9", // Light green accent
+    borderWidth: 1,
   },
   coursesList: {
     marginTop: 16,
@@ -151,32 +141,29 @@ export const styles = StyleSheet.create({
   courseCard: {
     width: 280,
     marginRight: 16,
-    backgroundColor: colors.white,
+    backgroundColor: "#ffffff",
     borderRadius: 12,
     padding: 16,
-    shadowColor: colors.shadow,
-    shadowOffset: {
-      width: 0,
-      height: 4,
-    },
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.2,
     shadowRadius: 5,
     elevation: 6,
     borderWidth: 1,
-    borderColor: colors.border,
+    borderColor: "#e0f2e9", // Light green accent
   },
   courseThumbnail: {
     width: "100%",
     height: 160,
     borderRadius: 8,
     marginBottom: 12,
-    backgroundColor: colors.background,
+    backgroundColor: "#f5f5f5",
   },
   courseTitle: {
     fontSize: 18,
     fontWeight: "bold",
     marginBottom: 8,
-    color: colors.text.primary,
+    color: "#333",
   },
   courseDetails: {
     flexDirection: "row",
@@ -185,26 +172,26 @@ export const styles = StyleSheet.create({
     paddingVertical: 8,
     borderTopWidth: 1,
     borderBottomWidth: 1,
-    borderColor: colors.border,
+    borderColor: "#e0f2e9", // Light green accent
   },
   courseInfo: {
     fontSize: 14,
-    color: colors.text.secondary,
+    color: "#666",
     fontWeight: "500",
   },
   notifyButton: {
-    backgroundColor: colors.secondary,
+    backgroundColor: "#007AFF",
     padding: 12,
     borderRadius: 8,
     alignItems: "center",
-    shadowColor: colors.shadow,
+    shadowColor: "#000",
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.1,
     shadowRadius: 4,
     elevation: 3,
   },
   notifyButtonText: {
-    color: colors.white,
+    color: "#ffffff",
     fontSize: 16,
     fontWeight: "600",
   },

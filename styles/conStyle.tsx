@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#f8f9fa",
+    backgroundColor: "#fff",
   },
   section: {
     padding: 20,
@@ -12,7 +12,7 @@ export const styles = StyleSheet.create({
     fontSize: 28,
     fontWeight: "bold",
     marginBottom: 10,
-    color: "#2d3436",
+    color: "#333",
   },
   subtitle: {
     fontSize: 18,
@@ -30,7 +30,7 @@ export const styles = StyleSheet.create({
   formTitle: {
     fontSize: 20,
     fontWeight: "600",
-    color: "#2d3436",
+    color: "#333",
     marginBottom: 20,
   },
   inputContainer: {
@@ -38,7 +38,7 @@ export const styles = StyleSheet.create({
   },
   inputLabel: {
     fontSize: 16,
-    color: "#2d3436",
+    color: "#333",
     marginBottom: 8,
     fontWeight: "500",
   },
@@ -64,11 +64,11 @@ export const styles = StyleSheet.create({
   },
   switchLabel: {
     fontSize: 16,
-    color: "#2d3436",
+    color: "#333",
     fontWeight: "500",
   },
   submitButton: {
-    backgroundColor: "#4a90e2",
+    backgroundColor: "#007AFF",
     padding: 16,
     borderRadius: 8,
     alignItems: "center",
@@ -99,7 +99,7 @@ export const styles = StyleSheet.create({
   contactButtonText: {
     fontSize: 18,
     fontWeight: "500",
-    color: "#2d3436",
+    color: "#333",
     marginTop: 10,
     marginBottom: 5,
   },
@@ -107,20 +107,5 @@ export const styles = StyleSheet.create({
     fontSize: 16,
     color: "#666",
     marginTop: 2,
-  },
-  successText: {
-    color: "#27ae60",
-    fontSize: 16,
-    fontWeight: "500",
-  },
-  warningText: {
-    color: "#f39c12",
-    fontSize: 16,
-    fontWeight: "500",
-  },
-  errorText: {
-    color: "#e74c3c",
-    fontSize: 16,
-    fontWeight: "500",
   },
 });

@@ -3,44 +3,44 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#f8f9fa",
+    backgroundColor: "#fff",
   },
   header: {
     padding: 20,
     backgroundColor: "#f8f9fa",
     borderBottomWidth: 1,
-    borderBottomColor: "#e9ecef",
+    borderBottomColor: "#eee",
   },
   headerTitle: {
     fontSize: 32,
     fontWeight: "bold",
-    color: "#2d3436",
+    color: "#1a1a1a",
     marginBottom: 8,
   },
   subtitle: {
     fontSize: 16,
-    color: "#2d3436",
+    color: "#666",
     marginBottom: 10,
   },
   categoryContainer: {
     paddingVertical: 15,
     paddingHorizontal: 20,
     borderBottomWidth: 1,
-    borderBottomColor: "#e9ecef",
+    borderBottomColor: "#eee",
   },
   categoryButton: {
     paddingHorizontal: 16,
     paddingVertical: 8,
     borderRadius: 20,
-    backgroundColor: "#e9ecef",
+    backgroundColor: "#f0f0f0",
     marginRight: 10,
   },
   categoryButtonActive: {
-    backgroundColor: "#4a90e2",
+    backgroundColor: "#007AFF",
   },
   categoryText: {
     fontSize: 14,
-    color: "#2d3436",
+    color: "#666",
     fontWeight: "500",
   },
   categoryTextActive: {
@@ -63,10 +63,6 @@ export const styles = StyleSheet.create({
     elevation: 3,
     overflow: "hidden",
   },
-  newsImage: {
-    width: "100%",
-    height: 200,
-  },
   newsContent: {
     padding: 15,
   },
@@ -80,29 +76,45 @@ export const styles = StyleSheet.create({
   },
   categoryTagText: {
     fontSize: 12,
-    color: "#2d3436",
+    color: "#495057",
     fontWeight: "500",
+  },
+  // New header and metadata styles
+  newsHeader: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginBottom: 12,
+    paddingBottom: 8,
+    borderBottomWidth: 1,
+    borderBottomColor: "#eee",
   },
   newsDate: {
     fontSize: 14,
-    color: "#2d3436",
-    marginBottom: 5,
+    color: "#666",
+    fontWeight: "500",
+  },
+  newsMetadata: {
+    fontSize: 14,
+    color: "#666",
+    fontWeight: "400",
   },
   newsTitle: {
     fontSize: 20,
     fontWeight: "bold",
-    color: "#2d3436",
+    color: "#1a1a1a",
     marginBottom: 8,
   },
   newsPreview: {
     fontSize: 16,
-    color: "#2d3436",
+    color: "#444",
     marginBottom: 12,
     lineHeight: 22,
   },
-  readMore: {
-    color: "#4a90e2",
-    fontSize: 14,
-    fontWeight: "600",
+  newsContentText: {
+    fontSize: 16,
+    color: "#444",
+    lineHeight: 24,
+    marginTop: 8,
   },
 });

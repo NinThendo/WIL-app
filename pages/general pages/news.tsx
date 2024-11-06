@@ -1,5 +1,13 @@
 import React, { useState } from "react";
-import { View, Text, ScrollView, TouchableOpacity, Image } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  ScrollView,
+  TouchableOpacity,
+  RefreshControl,
+  Dimensions,
+} from "react-native";
 import { DrawerScreenProps } from "../../type/types";
 import { styles } from "../../styles/newsStyle";
 
@@ -12,54 +20,62 @@ type NewsItem = {
   preview: string;
   content: string;
   category: string;
-  imageUrl?: string;
+  author: string;
+  readTime: string;
 };
 
 export function NewsScreen({ navigation }: Props) {
+  const [refreshing, setRefreshing] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
 
   const news: NewsItem[] = [
     {
       id: 1,
-      title: "New Course Announcement",
+      title: "New Course Announcement: AI and Machine Learning Specialization",
       date: "October 25, 2024",
       preview:
-        "Exciting new courses coming this winter season with focus on AI and Machine Learning",
+        "Exciting new courses coming this winter season with focus on AI and Machine Learning, featuring hands-on projects with industry-standard tools",
       content:
-        "We are thrilled to announce our new lineup of courses focused on cutting-edge technologies...",
+        "We are thrilled to announce our new lineup of courses focused on cutting-edge technologies. The program includes deep learning, natural language processing, and computer vision modules. Students will work with TensorFlow, PyTorch, and real-world datasets while being mentored by industry experts from leading tech companies.",
       category: "courses",
-      imageUrl: "/api/placeholder/800/400",
+      author: "Dr. Emily Chen",
+      readTime: "5 min",
     },
     {
       id: 2,
-      title: "Student Success Story",
+      title: "Student Success Story: From Bootcamp to Google Engineer",
       date: "October 22, 2024",
       preview:
-        "Meet Sarah, who landed her dream job at Google after completing our advanced programming course",
-      content: "Our recent graduate Sarah has an inspiring story to share...",
+        "Meet Sarah Zhang, who landed her dream job at Google after completing our advanced programming course. Learn about her journey and tips for success.",
+      content:
+        "Our recent graduate Sarah Zhang has an inspiring story to share. After transitioning from a marketing background, she completed our 6-month intensive programming bootcamp, built an impressive portfolio of full-stack applications, and successfully landed a role as a Software Engineer at Google. Her dedication to learning and practical project work made her stand out among candidates.",
       category: "success",
-      imageUrl: "/api/placeholder/800/400",
+      author: "James Wilson",
+      readTime: "8 min",
     },
     {
       id: 3,
-      title: "Campus Expansion Project",
+      title: "Campus Expansion Project: Tech Innovation Hub",
       date: "October 20, 2024",
       preview:
-        "Breaking ground on our new tech innovation center opening Spring 2025",
+        "Breaking ground on our new tech innovation center opening Spring 2025, featuring state-of-the-art labs and collaboration spaces",
       content:
-        "We're excited to announce the expansion of our campus facilities...",
+        "We're excited to announce the expansion of our campus facilities with a new 50,000 square foot Tech Innovation Hub. The facility will feature AR/VR labs, AI research centers, startup incubation spaces, and modern classrooms equipped with the latest technology. The $30M investment demonstrates our commitment to providing students with cutting-edge learning environments.",
       category: "campus",
-      imageUrl: "/api/placeholder/800/400",
+      author: "Michael Roberts",
+      readTime: "6 min",
     },
     {
       id: 4,
-      title: "Industry Partnership Announcement",
+      title: "Industry Partnership Program Expands with Major Tech Companies",
       date: "October 18, 2024",
       preview:
-        "New collaboration with leading tech companies to provide internship opportunities",
-      content: "We've established new partnerships with industry leaders...",
+        "New collaboration with leading tech companies offers expanded internship opportunities and mentorship programs for students",
+      content:
+        "We've established new partnerships with industry leaders including Microsoft, Amazon, and Meta. These partnerships will provide our students with exclusive internship opportunities, mentorship programs, and early access to new technologies. The program also includes regular tech talks from industry experts and hands-on workshops using enterprise-grade development tools.",
       category: "partnerships",
-      imageUrl: "/api/placeholder/800/400",
+      author: "Lisa Thompson",
+      readTime: "7 min",
     },
   ];
 
@@ -122,13 +138,6 @@ export function NewsScreen({ navigation }: Props) {
             style={styles.newsItem}
             onPress={() => navigateToDetail(item)}
           >
-            {item.imageUrl && (
-              <Image
-                source={{ uri: item.imageUrl }}
-                style={styles.newsImage}
-                resizeMode="cover"
-              />
-            )}
             <View style={styles.newsContent}>
               <View style={styles.categoryTag}>
                 <Text style={styles.categoryTagText}>
@@ -136,10 +145,15 @@ export function NewsScreen({ navigation }: Props) {
                     item.category}
                 </Text>
               </View>
-              <Text style={styles.newsDate}>{item.date}</Text>
+              <View style={styles.newsHeader}>
+                <Text style={styles.newsDate}>{item.date}</Text>
+                <Text style={styles.newsMetadata}>
+                  {item.author} • {item.readTime} read
+                </Text>
+              </View>
               <Text style={styles.newsTitle}>{item.title}</Text>
               <Text style={styles.newsPreview}>{item.preview}</Text>
-              <Text style={styles.readMore}>Read more →</Text>
+              <Text style={styles.newsContent}>{item.content}</Text>
             </View>
           </TouchableOpacity>
         ))}
